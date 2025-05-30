@@ -1,0 +1,13 @@
+data_ingestion:
+  local_data_path: "E:/big data"
+  file_names:
+    - "anime.csv"
+    - "anime_with_synopsis.csv"
+    - "animelist.csv"
+  animelist_max_rows: 5000000 
+
+model:
+  embedding_size: 128
+  loss: binary_crossentropy
+  optimizer: Adam
+  metrics: ["mae","mse"]

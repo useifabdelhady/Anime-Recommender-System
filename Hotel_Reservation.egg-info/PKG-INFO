@@ -1,8 +1,0 @@
-Metadata-Version: 2.4
-Name: Hotel_Reservation
-Version: 0.1
-Author: Yousef
-Requires-Dist: pandas
-Requires-Dist: numpy
-Dynamic: author
-Dynamic: requires-dist
