@@ -6,3 +6,4 @@ artifacts/weights/
 artifacts/model_checkpoint/
 Anime_Recommender.egg-info/
 weights.weights.h5
+mlruns/

@@ -11,3 +11,25 @@
 2025-06-04 18:39:28,354 - INFO - ALl the training testing data as well as rating_df is saved now..
 2025-06-04 18:39:42,005 - INFO - DF AND SYNOPSIS_Df saved sucesfullyy...
 2025-06-04 18:39:42,012 - INFO - Data Processing Pipeline Run sucesfully .... Congrats
+2025-06-04 19:01:48,222 - INFO - Model Training & COMET ML initialized..
+2025-06-04 19:01:51,637 - INFO - Data loaded sucesfully for Model Trainig
+2025-06-04 19:01:51,767 - INFO - Succesfully read the YAML file
+2025-06-04 19:01:51,768 - INFO - Loaded configuration from config.yaml
+2025-06-04 19:01:54,151 - INFO - Model created sucesfully....
+2025-06-04 19:03:59,631 - INFO - Model training Completedd.....
+2025-06-04 19:03:59,631 - WARNING - You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+2025-06-04 19:03:59,749 - INFO - Model saved to artifacts/model\model.h5
+2025-06-04 19:03:59,777 - INFO - Extracting weights for user_embedding
+2025-06-04 19:03:59,799 - INFO - Extracting weights for anime_embedding
+2025-06-04 19:04:00,459 - INFO - User and Anime weights saved sucesfully....
+2025-06-04 20:24:14,911 - INFO - Model Training & MLflow initialized..
+2025-06-04 20:24:18,420 - INFO - Data loaded successfully for Model Training
+2025-06-04 20:24:18,585 - INFO - Succesfully read the YAML file
+2025-06-04 20:24:18,585 - INFO - Loaded configuration from config.yaml
+2025-06-04 20:24:20,867 - INFO - Model created sucesfully....
+2025-06-04 20:26:47,774 - INFO - Model training completed.....
+2025-06-04 20:26:47,826 - WARNING - You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+2025-06-04 20:26:48,057 - INFO - Model saved to artifacts/model\model.h5
+2025-06-04 20:26:48,172 - INFO - Extracting weights for user_embedding
+2025-06-04 20:26:48,188 - INFO - Extracting weights for anime_embedding
+2025-06-04 20:28:40,197 - INFO - User and Anime weights saved successfully....

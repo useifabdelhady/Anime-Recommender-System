@@ -3,7 +3,7 @@ numpy
 setuptools
 pyyaml
 tensorflow
-comet-ml
+mlflow
 dvc
 dvc-gs
 flask
