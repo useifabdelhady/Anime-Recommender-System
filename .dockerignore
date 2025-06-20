@@ -1,0 +1,51 @@
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Jupyter Notebook
+.ipynb_checkpoints
+notebook/
+
+# Logs
+logs/
+*.log
+
+# Local development settings
+.env
+.venv
+venv/
+ENV/
+
+# Docker
+.dockerignore
+Dockerfile
+
+# DVC
+.dvc/
+
+# Large files that should be downloaded during setup
+# Uncomment if you want to exclude large model files
+# artifacts/model/*.h5
+# artifacts/weights/*.pkl
