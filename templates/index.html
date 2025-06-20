@@ -4,17 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/style.css">
-    <title>HYBRID ANIME RECOMMNDER SYSTEM</title>
-    
+    <title>HYBRID ANIME RECOMMENDER SYSTEM</title>
 </head>
 <body>
 
     <div class="form-container">
         <h1>Welcome to our ANIME RECOMMENDER SYSTEM</h1>
-        <form action="/" method="POST">
-            <label for="userID">Enter your User ID : </label>
+        <form id="recommendationForm" action="/" method="POST">
+            <label for="userID">Enter your User ID: ex: 11880</label>
             <input type="number" id="userID" name="userID" required>
-            <button type="submit">Get Recommendations</button>
+            <button type="submit" id="submitBtn">Get Recommendations</button>
         </form>
 
         {% if recommendations %}
@@ -26,9 +25,87 @@
                 {% endfor %}
             </ul>
         </div>
-
         {% endif %}
     </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner">
+            <div class="spinner"></div>
+            <div class="loading-text">Analyzing Your Preferences</div>
+            <div class="loading-subtext" id="loadingSubtext">Finding your perfect anime...</div>
+            <div class="progress-container">
+                <div class="progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript at the bottom of body -->
+    <script>
+        // Wait for DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('recommendationForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const loadingOverlay = document.getElementById('loadingOverlay');
+            const loadingSubtext = document.getElementById('loadingSubtext');
+            
+            const loadingMessages = [
+                "Analyzing your preferences...",
+                "Searching through thousands of anime...",
+                "Matching your taste profile...",
+                "Finding hidden gems for you...",
+                "Almost done, preparing results..."
+            ];
+            
+            let messageIndex = 0;
+            let messageInterval;
+            
+            // Check if elements exist before adding event listeners
+            if (form && submitBtn && loadingOverlay && loadingSubtext) {
+                form.addEventListener('submit', function(e) {
+                    showLoading();
+                });
+                
+                function showLoading() {
+                    // Change button state
+                    submitBtn.classList.add('loading');
+                    submitBtn.innerHTML = 'Processing...';
+                    submitBtn.disabled = true;
+                    
+                    // Show overlay
+                    loadingOverlay.classList.add('active');
+                    
+                    // Start cycling through messages
+                    messageInterval = setInterval(() => {
+                        messageIndex = (messageIndex + 1) % loadingMessages.length;
+                        loadingSubtext.textContent = loadingMessages[messageIndex];
+                    }, 1500);
+                }
+                
+                function hideLoading() {
+                    // Reset button
+                    submitBtn.classList.remove('loading');
+                    submitBtn.innerHTML = 'Get Recommendations';
+                    submitBtn.disabled = false;
+                    
+                    // Hide overlay
+                    loadingOverlay.classList.remove('active');
+                    
+                    // Clear message interval
+                    if (messageInterval) {
+                        clearInterval(messageInterval);
+                    }
+                }
+                
+                // Hide loading if page loads with results
+                window.addEventListener('load', function() {
+                    hideLoading();
+                });
+            } else {
+                console.error('Required elements not found');
+            }
+        });
+    </script>
     
 </body>
 </html>
